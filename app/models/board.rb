@@ -13,8 +13,6 @@ class Board < ActiveRecord::Base
     self.squares = [] unless self.squares
     x = x.to_i
     y = y.to_i
-    @x=x
-    @y=x
     if x < 4 && y < 4
       if squares[x]
         unless squares[x][y]

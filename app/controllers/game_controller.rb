@@ -13,5 +13,7 @@ class GameController < ApplicationController
     board = Board.find params[:id]
     board.move current_user, params[:x], params[:y]
     board.save
+    @x = params[:x]
+    @y = params[:y]
   end
 end
