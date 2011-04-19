@@ -1,20 +1,20 @@
 <ul>
-  <li><%= link_to "0 0", :controller => :game, :action => :move, :id => @board, :x=> 0, :y => 0 %></li>
-  <li><%= link_to "0 1", :controller => :game, :action => :move, :id => @board, :x=> 0, :y => 1 %></li>
-  <li><%= link_to "0 2", :controller => :game, :action => :move, :id => @board, :x=> 0, :y => 2 %></li>
-  <li><%= link_to "0 3", :controller => :game, :action => :move, :id => @board, :x=> 0, :y => 3 %></li>
-  <li><%= link_to "1 0", :controller => :game, :action => :move, :id => @board, :x=> 1, :y => 0 %></li>
-  <li><%= link_to "1 1", :controller => :game, :action => :move, :id => @board, :x=> 1, :y => 1 %></li>
-  <li><%= link_to "1 2", :controller => :game, :action => :move, :id => @board, :x=> 1, :y => 2 %></li>
-  <li><%= link_to "1 3", :controller => :game, :action => :move, :id => @board, :x=> 1, :y => 3 %></li>
-  <li><%= link_to "2 0", :controller => :game, :action => :move, :id => @board, :x=> 2, :y => 0 %></li>
-  <li><%= link_to "2 1", :controller => :game, :action => :move, :id => @board, :x=> 2, :y => 1 %></li>
-  <li><%= link_to "2 2", :controller => :game, :action => :move, :id => @board, :x=> 2, :y => 2 %></li>
-  <li><%= link_to "2 3", :controller => :game, :action => :move, :id => @board, :x=> 2, :y => 3 %></li>
-  <li><%= link_to "3 0", :controller => :game, :action => :move, :id => @board, :x=> 3, :y => 0 %></li>
-  <li><%= link_to "3 1", :controller => :game, :action => :move, :id => @board, :x=> 3, :y => 1 %></li>
-  <li><%= link_to "3 2", :controller => :game, :action => :move, :id => @board, :x=> 3, :y => 2 %></li>
-  <li><%= link_to "3 3", :controller => :game, :action => :move, :id => @board, :x=> 3, :y => 3 %></li>
+  <li><%= link_to "0 0", {:controller => :game, :action => :move, :id => @board, :x=> 0, :y => 0}, :remote => true %></li>
+  <li><%= link_to "0 1", {:controller => :game, :action => :move, :id => @board, :x=> 0, :y => 1}, :remote => true %></li>
+  <li><%= link_to "0 2", {:controller => :game, :action => :move, :id => @board, :x=> 0, :y => 2}, :remote => true %></li>
+  <li><%= link_to "0 3", {:controller => :game, :action => :move, :id => @board, :x=> 0, :y => 3}, :remote => true %></li>
+  <li><%= link_to "1 0", {:controller => :game, :action => :move, :id => @board, :x=> 1, :y => 0}, :remote => true %></li>
+  <li><%= link_to "1 1", {:controller => :game, :action => :move, :id => @board, :x=> 1, :y => 1}, :remote => true %></li>
+  <li><%= link_to "1 2", {:controller => :game, :action => :move, :id => @board, :x=> 1, :y => 2}, :remote => true %></li>
+  <li><%= link_to "1 3", {:controller => :game, :action => :move, :id => @board, :x=> 1, :y => 3}, :remote => true %></li>
+  <li><%= link_to "2 0", {:controller => :game, :action => :move, :id => @board, :x=> 2, :y => 0}, :remote => true %></li>
+  <li><%= link_to "2 1", {:controller => :game, :action => :move, :id => @board, :x=> 2, :y => 1}, :remote => true %></li>
+  <li><%= link_to "2 2", {:controller => :game, :action => :move, :id => @board, :x=> 2, :y => 2}, :remote => true %></li>
+  <li><%= link_to "2 3", {:controller => :game, :action => :move, :id => @board, :x=> 2, :y => 3}, :remote => true %></li>
+  <li><%= link_to "3 0", {:controller => :game, :action => :move, :id => @board, :x=> 3, :y => 0}, :remote => true %></li>
+  <li><%= link_to "3 1", {:controller => :game, :action => :move, :id => @board, :x=> 3, :y => 1}, :remote => true %></li>
+  <li><%= link_to "3 2", {:controller => :game, :action => :move, :id => @board, :x=> 3, :y => 2}, :remote => true %></li>
+  <li><%= link_to "3 3", {:controller => :game, :action => :move, :id => @board, :x=> 3, :y => 3}, :remote => true %></li>
 </ul>
 
 Player1: <%= @board.user_one.nickname if @board.user_one %>
