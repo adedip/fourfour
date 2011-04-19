@@ -18,7 +18,7 @@
 </ul>
 
 <% if @board.user_two %>
-    <% broadcast "/board", do %>
+    <% broadcast "/board" do %>
         $("#user_two").replace("#{@board.user_two}");
     <% end %>
 <% end %>
