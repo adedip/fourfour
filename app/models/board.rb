@@ -5,24 +5,21 @@ class Board < ActiveRecord::Base
   belongs_to :user_one, :class_name => "User", :foreign_key => :user_one
   belongs_to :user_two, :class_name => "User", :foreign_key => :user_two
 
-  before_save :init_squares
-
-  def init_squares
-    if squares
-      self.squares = "[],[],[],[]"
-    end
-    #squares = [[],[],[],[]]
-  end
-
   def self.available
     Board.find_by_user_two nil
   end
 
   def move user, x, y
+    squares = [] unless squares
     x = x.to_i
     y = y.to_i
     if x < 4 && y < 4
-      unless squares[x][y]
+      if squares[x]
+        unless squares[x][y]
+          squares[x][y] = user.id
+        end
+      else
+        squares[x] = []
         squares[x][y] = user.id
       end
     end
