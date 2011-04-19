@@ -1,4 +1,10 @@
 Fourfour::Application.routes.draw do
+
+
+  resources :users
+  match "/board" => "game#board", :as => :board
+  match "/move/:id/:x/:y" => "game#move", :as => :move
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +54,7 @@ Fourfour::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "game#board"
+  root :to => "users#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,18 +1,7 @@
 <ul>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
+  <li><%= link_to "0 0", :controller => :game, :action => :move, :id => @board, :x=> "0", :y => "0" %></li>
+
 </ul>
+
+Player1: <%= @board.user_one.nickname if @board.user_one %>
+Player2: <%= @board.user_two.nickname if @board.user_two %>

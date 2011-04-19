@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  squares: MyText
+  user_one: 1
+  user_two: 1
+
+two:
+  squares: MyText
+  user_one: 1
+  user_two: 1
