@@ -3,6 +3,7 @@ class GameController < ApplicationController
   def board
     if @board = Board.available
       @board.user_two = current_user
+      render "board.js.erb"
     else
       @board = Board.new :user_one => current_user
     end
