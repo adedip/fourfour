@@ -17,5 +17,5 @@
   <li id="p33"><%= link_to "3 3", {:controller => :game, :action => :move, :id => @board, :x=> 3, :y => 3}, :remote => true %></li>
 </ul>
 
-Player1: <%= @board.user_one.nickname if @board.user_one %>
-Player2: <%= @board.user_two.nickname if @board.user_two %>
+Player1: <span id="user_one"><%= @board.user_one.nickname if @board.user_one %></span>
+Player2: <span id="user_two"><%= @board.user_two.nickname if @board.user_two %></span>
