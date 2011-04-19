@@ -11,8 +11,8 @@ class Board < ActiveRecord::Base
 
   def move user, x, y
     self.squares = [] unless self.squares
-    x = x.to_i
-    y = y.to_i
+    @x,x = x.to_i
+    @y,y = y.to_i
     if x < 4 && y < 4
       if squares[x]
         unless squares[x][y]
