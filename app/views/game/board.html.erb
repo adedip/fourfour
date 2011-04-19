@@ -18,7 +18,9 @@
 </ul>
 
 <% if @board.user_two %>
-    <% new_player("/board", @board.user_two) %>
+    <% new_player "/board" do %>
+        <% @board.user_two %>
+    <% end %>
 <% end %>
 Player1: <span id="user_one"><%= @board.user_one.nickname if @board.user_one %></span>
 Player2: <span id="user_two"><%= @board.user_two.nickname if @board.user_two %></span>
