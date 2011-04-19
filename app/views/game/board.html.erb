@@ -18,8 +18,8 @@
 </ul>
 
 <% if @board.user_two %>
-    <% new_player "/board" do %>
-        <% @board.user_two %>
+    <% broadcast "/board", do %>
+        $("#user_two").replace("#{@board.user_two}");
     <% end %>
 <% end %>
 Player1: <span id="user_one"><%= @board.user_one.nickname if @board.user_one %></span>
