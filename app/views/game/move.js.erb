@@ -1,3 +1,10 @@
-<% broadcast "/board" do %>
+<% broadcast "/board/#{@board.id}" do %>
 $("#p<%=@x%><%=@y%>").addClass("<%=@user%>");
+$("#count").html("<%=@board.remain%>");
+<% end %>
+
+<% if @board.winner_or_pair.present? %>
+    <% broadcast "/board/#{@board.id}" do %>
+        alert("<%= @board.winner_or_pair %> vince!");
+    <% end %>
 <% end %>

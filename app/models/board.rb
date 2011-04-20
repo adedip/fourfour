@@ -26,11 +26,11 @@ class Board < ActiveRecord::Base
   end
 
   def winner_or_pair
-    unless remain
-      if count_squares(user_one) > count_squares(user_two)
-        user_one
-      elsif count_squares(user_one) < count_squares(user_two)
-        user_two
+    if remain == 0
+      if count_squares(self.user_one.id) > count_squares(self.user_two.id)
+        sb.elf.user_one.nickname
+      elsif count_squares(self.user_one.id) < count_squares(self.user_two.id)
+        self.user_two.nickname
       else
         nil
       end
@@ -38,11 +38,11 @@ class Board < ActiveRecord::Base
   end
 
   def remain
-    16 - squares.flatten.length
+    16 - squares.flatten.compact.length
   end
 
   def count_squares user
-    squares.flatten.rindex user
+    squares.flatten.compact.count(user).to_i
   end
 
 end
