@@ -5,6 +5,10 @@ $("#count").html("<%=@board.remain%>");
 
 <% if @board.winner_or_pair.present? %>
     <% broadcast "/board/#{@board.id}" do %>
+        <% if @board.winner_or_pair == "draw" %>
+        alert("Pareggio!");
+        <% else %>
         alert("<%= @board.winner_or_pair %> vince!");
+        <%end%>
     <% end %>
 <% end %>

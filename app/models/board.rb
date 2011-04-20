@@ -32,7 +32,7 @@ class Board < ActiveRecord::Base
       elsif count_squares(self.user_one.id) < count_squares(self.user_two.id)
         self.user_two.nickname
       else
-        nil
+        "draw"
       end
     end
   end
