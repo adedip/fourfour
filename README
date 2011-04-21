@@ -1,5 +1,5 @@
 FourFour è una applicazione/gioco creata per testare l'utilizzo di Faye (http://faye.jcoglan.com/ruby.html)
-Quindi è possibile giocare in su due macchine in remoto, e visualizzare gli eventi sincronizzati con le tavole di gioco
+Quindi è possibile giocare su due macchine in remoto, e visualizzare gli eventi sincronizzati con le tavole di gioco
 dei due utenti.
 
 Lo scopo del gioco è cliccare sul maggior numero di quadrati possibile, chi ne conquista di più vince.
