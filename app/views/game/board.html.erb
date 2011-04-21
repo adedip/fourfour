@@ -1,6 +1,6 @@
 <script type="text/javascript">
 $(function(){
-    var faye = new Faye.Client('http://localhost:9292/faye');
+    var faye = new Faye.Client('http://192.168.1.75:9292/faye');
     faye.subscribe("/board/<%=@board.id%>", function(data){
         eval(data);
     });
@@ -29,7 +29,10 @@ $(function(){
   <li id="p33"><%= link_to "3 3", {:controller => :game, :action => :move, :id => @board, :x=> 3, :y => 3}, :remote => true %></li>
 </ul>
 <span class="clr"></span>
+  <div style="float:left;width :250px;">
 Player1: <span id="user_one"><%= @board.user_one.nickname if @board.user_one %></span><br />
 Player2: <span id="user_two"><%= @board.user_two.nickname if @board.user_two %></span><br />
-<span id="count">16</span> left to finish!
+    </div>
+<div style="float:right; width:200px; display:block;"></div> <span id="count">16</span> left to finish!<br />
+  <h3><%= link_to "RESTART!", "/"%></h3></div>
 </div>
