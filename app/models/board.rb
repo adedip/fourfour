@@ -28,7 +28,7 @@ class Board < ActiveRecord::Base
   def winner_or_pair
     if remain == 0
       if count_squares(self.user_one.id) > count_squares(self.user_two.id)
-        sb.elf.user_one.nickname
+        self.user_one.nickname
       elsif count_squares(self.user_one.id) < count_squares(self.user_two.id)
         self.user_two.nickname
       else
