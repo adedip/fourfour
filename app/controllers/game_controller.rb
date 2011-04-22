@@ -4,6 +4,7 @@ class GameController < ApplicationController
     if @board = Board.available
       @board.user_two = current_user
       broadcast "/board/#{@board.id}", "$('#user_two').html('#{@board.user_two.nickname}');"
+      #start_count_down
     else
       @board = Board.new :user_one => current_user
     end
@@ -30,5 +31,18 @@ class GameController < ApplicationController
     move = {:channel => channel, :data => block}
     uri = URI.parse("http://192.168.1.75:9292/faye")
     Net::HTTP.post_form(uri, :message => move.to_json)
+  end
+
+  def start_count_down
+    x = 5
+    while x >= 0 do
+      x -=1
+      if x == 0
+      broadcast "/board/#{@board.id}", "$('#ready').html('GO!!!');"
+      else
+      broadcast "/board/#{@board.id}", "$('#ready').html('#{x+1}');"
+      end
+      sleep 3
+    end
   end
 end

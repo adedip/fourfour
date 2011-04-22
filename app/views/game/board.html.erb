@@ -7,6 +7,7 @@ $(function(){
 });
 </script>
 <div id="game_board">
+  <span id="ready">Ready...</span>
 <ul id="squares_board">
   <li id="p00"><%= link_to "0 0", {:controller => :game, :action => :move, :id => @board, :x=> 0, :y => 0}, :remote => true %></li>
   <li id="p01"><%= link_to "0 1", {:controller => :game, :action => :move, :id => @board, :x=> 0, :y => 1}, :remote => true %></li>
